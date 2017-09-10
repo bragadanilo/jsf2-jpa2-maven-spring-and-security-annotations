@@ -1,0 +1,59 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/template/_template.xhtml">
+
+    <ui:define name="title">
+            Users
+    </ui:define>
+    <ui:define name="content">
+  		 <p:commandButton icon="ui-icon-plus" value="Add new" action="#{userBean.edit(0)}"/>
+         <br/>
+         <br/>
+         <p:dataTable id="dtClients" var="model" value="#{userBean.list}" emptyMessage="(Vazio)">
+	        <f:facet name="header">
+	            Users
+	        </f:facet>
+	        <p:column headerText="Id" sortBy="#{model.id}">
+	            <h:outputText value="#{model.id}" />
+	        </p:column>
+	        <p:column headerText="Name" sortBy="#{model.username}">
+	            <h:outputText value="#{model.username}" />
+	        </p:column> 
+	        
+	        <p:column style="width:32px;text-align: center">
+	             <p:commandButton icon="ui-icon-pencil" title="Edit" action="#{userBean.edit(model.id)}">
+	             	<f:param name="modelId" value="#{model.id}"></f:param>
+	             </p:commandButton>
+	        </p:column>
+	        <p:column style="width:32px;text-align: center">
+	    
+	             
+	             <p:commandButton id="btnDelete" title="#{msg.global_delete}"
+										icon="ui-icon-close" ajax="true" update="@form"
+										oncomplete="PF('dlgDelete').show();"
+										action="#{userBean.handleDelete(model)}" />
+										
+	        </p:column>
+	    </p:dataTable>
+	    
+	    <!-- Delete Message -->
+		<p:dialog id="dlgDelete" header="Delete"
+			widgetVar="dlgDelete" modal="true">
+			
+			<h:outputText
+				value="Confirm: #{userBean.user.username} ? " />
+			<p></p>
+			<p:commandButton id="btnYes" value="Yes"
+				update="@form" oncomplete="PF('dlgDelete').hide()"
+				styleClass="btn btn-default"
+				actionListener="#{userBean.delete()}" process="@this" />
+			<!-- No button -->
+			<p:commandButton id="btnNo" value="No"
+				onclick="PF('dlgDelete').hide()" type="button"
+				styleClass="btn btn-default" />
+		</p:dialog>
+    </ui:define>
+</ui:composition>

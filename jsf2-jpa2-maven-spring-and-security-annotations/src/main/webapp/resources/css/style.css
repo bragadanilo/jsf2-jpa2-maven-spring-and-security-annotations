@@ -1,0 +1,119 @@
+body{
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+#content{
+	margin-left: 100px; 
+	margin-right: 100px
+}
+
+.empty-box10{
+    display: block;
+    width: 100%;
+    height: 10px;
+    overflow: hidden;
+}
+
+.empty-box20{
+    display: block;
+    width: 100%;
+    height: 20px;
+    overflow: hidden;
+}
+
+.fright{
+	float: right;
+}
+
+.container50 {
+    width: 50%;
+    float: left;
+    background-color: blue;
+}
+
+.input-box{
+	width: 50%;
+}
+
+
+.eventRed, .eventRed .fc-event,
+.eventRed a,
+.eventRed .fc-event-inner{
+   background-color: #fe8686 !important;
+   border-color: #fe8686 !important;
+}
+
+.eventSoftRed, .eventSoftRed .fc-event,
+.eventSoftRed a,
+.eventSoftRed .fc-event-inner{
+   background-color: #fbc0c0 !important;
+   border-color: #fbc0c0 !important;
+}
+.eventGreen, .eventGreen .fc-event,
+.eventGreen a,
+.eventGreen .fc-event-inner{
+   background-color: #2e901a !important;
+   border-color: #2e901a !important;
+}
+
+.eventSoftGreen, .eventSoftGreen .fc-event,
+.eventSoftGreen a,
+.eventSoftGreen .fc-event-inner{
+   background-color: #99e889 !important;
+   border-color: #99e889 !important;
+}
+
+.eventBlue, .eventBlue .fc-event,
+.eventBlue a,
+.eventBlue .fc-event-inner{
+   background-color: #3a87ad !important;
+   border-color: #3a87ad !important;
+}
+
+.eventSoftBlue, .eventSoftBlue .fc-event,
+.eventSoftBlue a,
+.eventSoftBlue .fc-event-inner{
+   background-color: #a2c8da !important;
+   border-color: #a2c8da !important;
+}
+
+.fc-content{
+	cursor: pointer !important;
+}
+
+.ui-state-disabled, .ui-widget-content .ui-state-disabled, .ui-widget-header .ui-state-disabled{
+	opacity: 0.65 !important;
+}
+
+.logout-btn {
+    background: transparent;
+    border-color: transparent;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.logout-btn:hover {
+    background: #e0f1f7;
+}
+.logged-user{
+	position: absolute;
+    font-size: 12px;
+    right: 15px;
+    font-style: italic;
+}
+
+.calendarClass input {
+    width: 100px !important
+}
+
+footer {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;	
+	text-align: center;
+	font-size: 9px;
+	color: #1f8dbd;
+}
+footer a{
+	color: #1f8dbd;
+}

@@ -1,0 +1,58 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+    	<h:outputStylesheet library="css" name="style.css"/>
+    	<h:outputStylesheet library="css" name="my-theme.css"/>
+    	<title>Dia de Dentista</title>
+    	<link rel="shortcut icon" type="image/x-icon" href="#{facesContext.externalContext.requestContextPath}/resources/images/favicon.ico" />
+    </h:head>
+    
+    <h:body>
+	    <h:form>
+	    
+	        <div id="header">
+	            <div style="text-align: center">
+	            <h1>
+	            	<a href="${request.contextPath}" id="logo-text">
+	            		Base Project
+	            	</a>
+	            	</h1>
+	            </div>	            
+	            <div class="empty-box10"></div>
+
+	            <p:menubar >
+			        <p:menuitem value="Clients" url="/views/professional/professional-list.xhtml" icon="ui-icon-person" />
+
+			        <p:submenu label="Admin" icon="ui-icon-gear" rendered="#{headerBean.hasRole('ROLE_ADMIN')}">
+			            <p:menuitem value="User" url="/views/user/user-list.xhtml" icon="ui-icon-person" />
+			            <p:separator />			           
+			        </p:submenu>
+			 
+			        <f:facet name="options">
+	         			<input type="submit" formaction="${request.contextPath}/appLogout" formmethod="POST" value="Logout" class="logout-btn" />
+			        </f:facet>
+			    </p:menubar>
+			    <div class="logged-user"> 
+			    	Usuário: #{headerBean.loggedUser}
+			    </div>
+			    
+	        </div>
+			
+			<div class="empty-box20"></div>
+			
+	        <div id="content">
+            	<p:messages id="messages" showDetail="false" autoUpdate="true" closable="true" />
+            	<ui:insert name="content">
+            	</ui:insert>
+            	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+	        </div>
+	    
+	    </h:form>
+	    
+	    <h:outputScript library="js"  name="primefaces-locale.js"/>
+    </h:body>
+</html>

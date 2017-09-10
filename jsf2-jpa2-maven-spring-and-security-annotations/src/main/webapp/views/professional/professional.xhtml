@@ -1,0 +1,76 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/template/_template.xhtml">
+
+    <ui:define name="title">
+        Client
+    </ui:define>
+    
+    
+    <ui:define name="content">
+	    <f:metadata>
+		    <f:viewParam name="modelId" value="#{professionalBean.modelId}"/>
+		    <f:viewAction action="#{professionalBean.loadById}"/>
+		</f:metadata>
+
+        <p:fieldset legend="Client Info">
+			<div class="ui-fluid">
+				<h:panelGrid columns="2" columnClasses="ui-grid-col-3,ui-grid-col-9">
+					<p:outputLabel value="Name:" for="name" />
+					<p:inputText id="name" value="#{professionalBean.professional.name}" maxlength="100"
+						required="true" requiredMessage="Nome obrigatório"
+						validatorMessage="Nome não pode ser superior a 100" class="input-box">
+						<f:validateLength maximum="100" />
+						
+					</p:inputText>
+	
+					<p:outputLabel value="Phone:" for="phone" />
+					<p:inputText id="phone" value="#{professionalBean.professional.phone}" class="input-box">
+					</p:inputText>
+					
+					<p:outputLabel value="Email:" for="email" />
+					<p:inputText id="email" value="#{professionalBean.professional.email}" class="input-box"/>
+	
+					<p:outputLabel value="Address:" for="address" />
+					<p:inputText id="address" value="#{professionalBean.professional.address}" class="input-box"/>
+					
+					
+					<p:outputLabel for="eventColor" value="Color:"  />
+			        <p:selectOneMenu id="eventColor" value="#{professionalBean.eventColor}" 
+			        		converter="#{professionalBean.eventColorConverter}"	
+			                var="t" >
+			                
+			            <f:selectItems value="#{professionalBean.eventColorList}" var="theme" itemLabel="#{theme.displayName}" itemValue="#{theme}" />
+			 
+			            <p:column >
+			            	<div class="#{t.name}" style="color:rgba(255, 0, 0, 0);"> 
+			                O
+			                </div>
+			            </p:column>
+			 
+			            <p:column>
+			                <h:outputText value="#{t.displayName}" />
+			            </p:column>
+			        </p:selectOneMenu>
+	
+					<p:outputLabel value="Obs:" for="obs" />
+					<p:inputTextarea id="obs" value="#{professionalBean.professional.obs}" rows="5" cols="80" class="input-box"/>
+					
+					
+				</h:panelGrid>
+			</div>
+		</p:fieldset>
+		<div class="empty-box20" />
+		<p:fieldset >
+			 <p:commandButton action="#{professionalBean.save()}" icon="ui-icon-disk" 
+			 	value="Save" title="Save">
+             </p:commandButton>
+             <p:commandButton icon="ui-icon-close" action="#{professionalBean.cancel()}" 
+             	value="Cancel" title="Cancel" immediate="true">
+             </p:commandButton>
+		</p:fieldset>
+    </ui:define>
+</ui:composition>

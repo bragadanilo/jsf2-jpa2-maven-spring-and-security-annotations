@@ -1,0 +1,40 @@
+.ui-menu.ui-menubar {
+    padding-top: 10px;
+    height: 35px;
+	
+	background-image: linear-gradient(to bottom, #c8e1e8, #78cfea);
+	border: none;
+	
+}
+	
+.ui-menu.ui-widget li > .ui-menuitem-link.ui-state-hover {
+    color: #1f6f4e;  
+     text-decoration: underline;  
+    background-color: #e0f1f7;
+    background-color: #e0f1f7;
+    background-position: 0px;
+    background-image: -moz-linear-gradient(top, #e0f1f7, #e0f1f7);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e0f1f7), to(#e0f1f7));
+    background-image: -webkit-linear-gradient(top, #e0f1f7, #e0f1f7);
+    background-image: -o-linear-gradient(top, #e0f1f7, #e0f1f7);
+    background-image: linear-gradient(to bottom, #e0f1f7, #e0f1f7);
+    background-repeat: repeat-x;
+    filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+   
+}
+
+.ui-menu.ui-widget li.ui-corner-all, .ui-menu.ui-widget a.ui-corner-all {
+    margin-right: 7px;
+}
+
+.ui-widget-header {
+    background: #a1d8e9;
+}
+
+.ui-widget-overlay {
+    background: #b6cfe4;
+    height: 150% !important;
+}

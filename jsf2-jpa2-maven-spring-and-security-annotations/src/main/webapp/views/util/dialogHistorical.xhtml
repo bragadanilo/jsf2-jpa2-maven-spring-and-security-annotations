@@ -1,0 +1,24 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+>
+
+		<!-- Historical Message -->
+		<p:dialog id="dlgHistorical" header="Histórico de Consultas" height="300"
+			widgetVar="dlgHistorical" modal="true">
+			
+			<p:inputTextarea rows="5" cols="50" disabled="true"
+				value="#{scheduleBean.historical.events}"
+				escape="false" style="white-space: pre-wrap;word-wrap: break-word;" />
+			<p/>
+			
+			<p:outputLabel value="#{scheduleBean.historical.paymentDue}" />
+			<p/>
+			
+			<p:commandButton  id="btnClose" value="Fechar"
+				onclick="PF('dlgHistorical').hide()" type="button"
+				styleClass="btn btn-default" />
+		</p:dialog>
+</ui:composition>
