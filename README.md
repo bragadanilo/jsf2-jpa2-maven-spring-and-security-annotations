@@ -1,5 +1,3 @@
-![alt tag](https://mirror.openshift.com/pub/openshift/logo/openshift_logo_wide_blk250.png)
-
 # jsf2-jpa2-maven-spring-and-security-annotations App Example
 
 
