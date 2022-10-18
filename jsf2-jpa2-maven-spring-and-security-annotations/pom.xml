@@ -18,7 +18,7 @@
 
 		<springframework.version>4.3.0.RELEASE</springframework.version>
 		<springsecurity.version>4.2.13.RELEASE</springsecurity.version>
-		<jackson.library>2.9.9</jackson.library>
+		<jackson.library>2.13.4.1</jackson.library>
 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.7</maven.compiler.source>
